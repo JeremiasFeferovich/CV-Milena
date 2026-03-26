@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV - Milena Sol Feferovich</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --beige-light: #f9f0f3;
+    --beige-mid: #f0dce3;
+    --beige-dark: #c9a0b0;
+    --brown: #8a5070;
+    --brown-dark: #5c2d4a;
+    --white: #ffffff;
+    --gray-text: #5a5a5a;
+  }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: #e0ced6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+    gap: 24px;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    background: var(--white);
+    display: grid;
+    grid-template-columns: 195px 1fr;
+    box-shadow: 0 10px 50px rgba(0,0,0,0.18);
+  }
+
+  /* ─── SIDEBAR ─── */
+  .sidebar {
+    background: var(--beige-light);
+    padding: 30px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .photo-container { display: flex; justify-content: center; }
+
+  .photo-circle {
+    width: 108px;
+    height: 108px;
+    border-radius: 50%;
+    background: var(--beige-mid);
+    border: 3px solid var(--beige-dark);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: var(--brown);
+    text-align: center;
+    font-style: italic;
+    line-height: 1.5;
+  }
+
+  .sidebar-bio {
+    color: var(--gray-text);
+    font-style: italic;
+    line-height: 1.65;
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11.5px;
+    padding: 0 2px;
+  }
+
+  .sidebar-divider {
+    height: 1.5px;
+    background: var(--beige-dark);
+  }
+
+  .sidebar-section { display: flex; flex-direction: column; gap: 6px; }
+
+  .sidebar-section-title {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 9.5px;
+    font-weight: 600;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: var(--brown-dark);
+    margin-bottom: 2px;
+  }
+
+  .s-icon {
+    width: 17px;
+    height: 17px;
+    background: var(--brown-dark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 8px;
+    flex-shrink: 0;
+  }
+
+  .s-icon svg, .section-icon svg {
+    display: block;
+    flex-shrink: 0;
+  }
+
+  .contact-item {
+    font-size: 9px;
+    color: var(--gray-text);
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    line-height: 1.5;
+  }
+
+  .contact-dot {
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: var(--beige-dark);
+    margin-top: 5px;
+    flex-shrink: 0;
+  }
+
+  .skill-cat {
+    font-size: 8.5px;
+    font-weight: 600;
+    color: var(--brown-dark);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 5px;
+    margin-bottom: 2px;
+  }
+
+  .skill-item {
+    font-size: 9px;
+    color: var(--gray-text);
+    margin-bottom: 2px;
+    padding-left: 9px;
+    position: relative;
+    line-height: 1.45;
+  }
+
+  .skill-item::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    color: var(--beige-dark);
+    font-weight: 600;
+  }
+
+  /* ─── MAIN ─── */
+  .main {
+    padding: 30px 26px 26px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .name-block {
+    padding-bottom: 12px;
+    border-bottom: 1.5px solid var(--beige-dark);
+  }
+
+  .name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 33px;
+    font-weight: 300;
+    color: var(--brown-dark);
+    line-height: 1.05;
+    letter-spacing: 1.5px;
+  }
+
+  .title-line {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 2.2px;
+    text-transform: uppercase;
+    color: var(--brown);
+    margin-top: 6px;
+  }
+
+  .section { display: flex; flex-direction: column; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .section-icon {
+    width: 20px; height: 20px;
+    background: var(--brown-dark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 9px;
+    flex-shrink: 0;
+  }
+
+  .section-title {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2.2px;
+    text-transform: uppercase;
+    color: var(--brown-dark);
+  }
+
+  .entry { margin-bottom: 8px; }
+
+  .entry-title {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--brown-dark);
+    margin-bottom: 1px;
+    line-height: 1.4;
+  }
+
+  .entry-subtitle {
+    font-size: 9px;
+    font-weight: 500;
+    color: var(--brown);
+    margin-bottom: 3px;
+    font-style: italic;
+  }
+
+  .entry-bullets { list-style: none; }
+
+  .entry-bullets li {
+    font-size: 8.8px;
+    color: var(--gray-text);
+    margin-bottom: 2px;
+    padding-left: 10px;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .entry-bullets li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--beige-dark);
+    font-weight: 700;
+  }
+
+  .entry.highlight {
+    background: var(--beige-light);
+    border-left: 3px solid var(--brown);
+    padding: 7px 10px;
+    border-radius: 0 3px 3px 0;
+    margin-bottom: 10px;
+  }
+
+  .badge {
+    display: inline-block;
+    background: var(--beige-dark);
+    color: var(--brown-dark);
+    font-size: 7px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    padding: 1.5px 6px;
+    border-radius: 8px;
+    margin-left: 5px;
+    vertical-align: middle;
+  }
+
+  .entry-sep {
+    height: 1px;
+    background: var(--beige-mid);
+    margin: 2px 0 9px 0;
+  }
+
+  @media print {
+    body { background: white; padding: 0; gap: 0; }
+    .page { box-shadow: none; page-break-after: always; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════ PÁGINA 1 ══════════ -->
+<div class="page">
+  <div class="sidebar">
+
+    <div class="photo-container">
+      <img id="foto-cv" src="profile_picture_cropped.png" alt="Foto de perfil"
+        style="width:108px;height:108px;border-radius:50%;border:3px solid var(--beige-dark);object-fit:cover;object-position:center;display:block;background:var(--beige-mid);"
+        onerror="this.style.display='none';document.getElementById('foto-placeholder').style.display='flex';"
+      />
+      <div id="foto-placeholder" class="photo-circle" style="display:none;">
+        📷<br><small>Insertar<br>foto aquí</small>
+      </div>
+    </div>
+
+    <p class="sidebar-bio">
+      Apasionada por la Medicina, recibida con medalla de oro en Universidad Favaloro. Con fuerte vocación de servicio, empatía en el trato con la paciente y compromiso con el aprendizaje continuo. Experiencia en trabajo en equipo interdisciplinario, investigación científica y extensión comunitaria en salud sexual y reproductiva.
+    </p>
+
+    <div class="sidebar-divider"></div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-section-title"><div class="s-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="10" height="10"><path d="M4 4h16v16H4z"/><polyline points="22,6 12,13 2,6"/></svg></div>Contacto</div>
+      <div class="contact-item"><div class="contact-dot"></div>Buenos Aires, Argentina</div>
+      <div class="contact-item"><div class="contact-dot"></div>+54 9 11 3454 3157</div>
+      <div class="contact-item"><div class="contact-dot"></div>milena@feferovich.com.ar</div>
+      <div class="contact-item"><div class="contact-dot"></div>linkedin.com/in/milena-feferovich/</div>
+    </div>
+
+    <div class="sidebar-divider"></div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-section-title"><div class="s-icon"><svg viewBox="0 0 24 24" fill="white" width="10" height="10"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg></div>Habilidades</div>
+
+      <div class="skill-cat">Clínicas</div>
+      <div class="skill-item">Atención clínica integral</div>
+      <div class="skill-item">Confección de historias clínicas</div>
+      <div class="skill-item">Guardias médicas</div>
+      <div class="skill-item">Salud sexual y reproductiva</div>
+
+      <div class="skill-cat">Investigación</div>
+      <div class="skill-item">PubMed / Cochrane</div>
+      <div class="skill-item">Análisis estadístico</div>
+      <div class="skill-item">Redacción científica</div>
+
+      <div class="skill-cat">Informática e IA</div>
+      <div class="skill-item">Excel · Google Sheets</div>
+      <div class="skill-item">Historias clínicas electrónicas</div>
+      <div class="skill-item">ChatGPT · Claude (IA)</div>
+
+      <div class="skill-cat">Interpersonales</div>
+      <div class="skill-item">Trabajo en equipo</div>
+      <div class="skill-item">Escucha activa</div>
+
+      <div class="skill-cat">Idiomas</div>
+      <div class="skill-item">Español: nativo</div>
+      <div class="skill-item">Inglés: avanzado (FCE Cambridge 2018)</div>
+    </div>
+
+    <div class="sidebar-divider"></div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-section-title"><div class="s-icon"><svg viewBox="0 0 24 24" fill="white" width="10" height="10"><polygon points="12,2 22,12 12,22 2,12"/></svg></div>Congresos</div>
+      <div class="skill-item">Asistente — Jornada de Cierre SAGIJ 2025</div>
+    </div>
+
+  </div>
+
+  <div class="main">
+    <div class="name-block">
+      <div class="name">MILENA SOL<br>FEFEROVICH</div>
+      <div class="title-line">Médica · MN 208367</div>
+    </div>
+
+    <!-- FORMACIÓN ACADÉMICA -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon"><svg viewBox="0 0 24 24" fill="white" width="11" height="11"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg></div>
+        <div class="section-title">Formación Académica</div>
+      </div>
+
+      <div class="entry highlight">
+        <div class="entry-title">Grado en Medicina</div>
+        <div class="entry-subtitle">Universidad Favaloro · 2020–2025</div>
+        <ul class="entry-bullets">
+          <li>Medalla de oro al mejor promedio de la carrera — Promedio: 9,51</li>
+          <li>Beca por excelencia académica</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-title">Bachiller en Química y Biotecnología</div>
+        <div class="entry-subtitle">Escuela Técnica ORT · 2014–2019</div>
+        <ul class="entry-bullets">
+          <li>Diploma de honor — Promedio: 9,47</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- EXPERIENCIA ASISTENCIAL -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" width="11" height="11"><path d="M12 5v14M5 12h14"/></svg></div>
+        <div class="section-title">Experiencia Asistencial</div>
+      </div>
+
+      <div class="entry highlight">
+        <div class="entry-title">Rotación Electiva en Tocoginecología</div>
+        <div class="entry-subtitle">Hospital Italiano de Buenos Aires (HIBA) · Sep – Oct 2025</div>
+        <ul class="entry-bullets">
+          <li>Participación activa en Obstetricia y Ginecología: atención de pacientes internadas y ambulatorias.</li>
+          <li>Colaboración en guardias médicas, seguimiento clínico y confección de historias clínicas.</li>
+          <li>Asistencia a ateneos y actividades académicas del servicio.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-title">Práctica Final Obligatoria (PFO)</div>
+        <div class="entry-subtitle">Universidad Favaloro · 2025</div>
+        <ul class="entry-bullets">
+          <li>Rotaciones en Clínica Médica, Cirugía General, Ginecología y Obstetricia, y Pediatría.</li>
+          <li>Atención de pacientes internados, confección de historias clínicas y guardias médicas.</li>
+          <li>Participación en pases de sala y discusión de casos clínicos.</li>
+        </ul>
+      </div>
+
+      <div class="entry-sep"></div>
+
+      <div class="entry">
+        <div class="entry-title">Rotación en Medicina Rural</div>
+        <div class="entry-subtitle">Hospital Luis Agote – Chamical, La Rioja · Jun – Ago 2025</div>
+        <ul class="entry-bullets">
+          <li>Atención de pacientes internados, guardias médicas y actividades de promoción de la salud comunitaria.</li>
+          <li>Charlas educativas sobre ESI, métodos anticonceptivos y prevención de adicciones.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- INVESTIGACIÓN CIENTÍFICA -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="11" height="11"><path d="M9 3h6v10H9z"/><path d="M12 13v5"/><path d="M8 21h8"/><path d="M6 8H4"/></svg></div>
+        <div class="section-title">Investigación Científica</div>
+      </div>
+
+      <div class="entry highlight">
+        <div class="entry-title">Publicación Científica</div>
+        <div class="entry-subtitle">Revista de la Universidad Favaloro · 2026</div>
+        <ul class="entry-bullets">
+          <li>"Relación entre los niveles de alfabetización en salud y conocimientos y actitudes respecto al Papanicolaou en mujeres mayores de 18 años de Chamical, La Rioja."</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-title">Pasante de Investigación Internacional</div>
+        <div class="entry-subtitle">Barcelona Institute for Global Health (ISGlobal) – Hospital Clínic · 2024</div>
+        <ul class="entry-bullets">
+          <li>"Non-invasive ultrasound screening and monitoring of neonatal and infant meningitis: A proof-of-concept validation study in Manhiça District Hospital and Maputo Central Hospital."</li>
+        </ul>
+      </div>
+
+      <div class="entry-sep"></div>
+
+      <div class="entry">
+        <div class="entry-title">Investigadora Principal</div>
+        <div class="entry-subtitle">Universidad Favaloro · 2022–2024</div>
+        <ul class="entry-bullets">
+          <li>"Frecuencia de síntomas de depresión y su relación con el riesgo de desarrollar trastornos de la conducta alimentaria en estudiantes de grado de la Universidad Favaloro."</li>
+        </ul>
+      </div>
+
+      <div class="entry-sep"></div>
+
+      <div class="entry">
+        <div class="entry-title">Pasante de Investigación</div>
+        <div class="entry-subtitle">IMETTYB – CONICET · 2022</div>
+        <ul class="entry-bullets">
+          <li>Promoción temprana de neovascularización mediante trasplante de células de músculo cardíaco en modelo ovino de infarto agudo de miocardio.</li>
+        </ul>
+      </div>
+
+      <div class="entry-sep"></div>
+
+      <div class="entry">
+        <div class="entry-title">Pasante de Investigación</div>
+        <div class="entry-subtitle">Centro de Investigaciones Endocrinológicas – Hospital de Niños Ricardo Gutiérrez · 2019</div>
+        <ul class="entry-bullets">
+          <li>El factor de transcripción Brachyury en patología tiroidea nodular pediátrica.</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════ PÁGINA 2 ══════════ -->
+<div class="page">
+  <div class="sidebar">
+    <div style="height:30px"></div>
+  </div>
+
+  <div class="main">
+
+    <!-- DOCENCIA UNIVERSITARIA -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="11" height="11"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+        <div class="section-title">Docencia Universitaria</div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-title">Tutora Académica</div>
+        <div class="entry-subtitle">Programa de Formación Docente – Universidad Favaloro · 2021–2025</div>
+        <ul class="entry-bullets">
+          <li>Tutoría a ingresantes (1.er año): acompañamiento, orientación, Química, Biología y Genética.</li>
+          <li>Tutoría en Patología (3.er año).</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- EXTENSIÓN UNIVERSITARIA -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="11" height="11"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div class="section-title">Extensión Universitaria</div>
+      </div>
+
+      <div class="entry highlight">
+        <div class="entry-title">Educación en Salud Sexual y Reproductiva</div>
+        <div class="entry-subtitle">Universidad Favaloro · 2025</div>
+        <ul class="entry-bullets">
+          <li>Actividad comunitaria sobre métodos anticonceptivos y prevención de ITS en el Bachillerato Popular "Voces de Latinoamérica" (Barrio Rodrigo Bueno, CABA).</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-title">Colaboración Asistencial con Equipo de Enfermería</div>
+        <div class="entry-subtitle">Universidad Favaloro · 2025</div>
+        <ul class="entry-bullets">
+          <li>Apoyo en tareas asistenciales cotidianas y atención de pacientes internados en el marco del programa de extensión universitaria.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CURSOS -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="11" height="11"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+        <div class="section-title">Cursos y Actividades</div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-title">Liderazgo en Educación No Formal</div>
+        <div class="entry-subtitle">Noam Masorti Youth Organization · 2020–2021</div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-title">Hackathon HaifaTeenTech</div>
+        <div class="entry-subtitle">Competencia de innovación y tecnología · 2019</div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-title">Scholas Occurrentes International Youth Encounter</div>
+        <div class="entry-subtitle">Inclusión, diálogo intercultural e innovación educativa · 2017</div>
+      </div>
+    </div>
+
+  </div>
+</div>
